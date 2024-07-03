@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color: #f8f9fa;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card" style="max-width: 400px; margin: 100px auto; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+          <div class="card-body">
+            <h3 class="text-center mb-4" style="color: #785ce9;">Iniciar Sesión</h3>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="username" style="color: #785ce9;">Nombre de usuario</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background-color: #785ce9; border-color: #785ce9;"><i class="fa fa-user" style="color: #785ce9;"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password" style="color: #785ce9;">Contraseña</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background-color: #785ce9; border-color: #785ce9;"><i class="fa fa-lock" style="color: #785ce9;"></i></span>
+                  </div>
+                  <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" style="background-color: #785ce9; border-color: #785ce9;">Iniciar sesión</button>
+            </form>
+            <div class="text-center mt-3">
+              <p>¿No tienes una cuenta? <a href="registro.html" style="color: #785ce9;">Regístrate aquí!!</a></p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer" style="text-align: center; margin-top: 20px; color: #888;">
+    <p>©2024 <strong style="color: #785ce9;">ComicSharingan</strong></p>
+    <p><a href="index.html" style="color: #785ce9;"><i class="fa fa-arrow-left"></i> Volver</a></p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username !== '' && password !== '') {
+        alert('¡Bienvenido, ' + username + '!');
+        window.location.href = 'index.html'; // Redirigir al usuario al index
+      } else {
+        alert('Por favor, complete ambos campos.');
+      }
+    });
+  </script>
+</body>
+</html>

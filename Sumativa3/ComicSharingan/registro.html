@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group label {
+      color: #785ce9;
+    }
+
+    .btn-primary {
+      background-color: #785ce9;
+      border-color: #785ce9;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #684ed7;
+      border-color: #684ed7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="text-center mb-4" style="color: #785ce9;">Registro</h3>
+            <form id="registerForm">
+              <div class="form-group">
+                <label for="username" style="color: #785ce9;">Nombre de usuario</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background-color: #785ce9; border-color: #785ce9;"><i class="fa fa-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password" style="color: #785ce9;">Contraseña</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background-color: #785ce9; border-color: #785ce9;"><i class="fa fa-lock"></i></span>
+                  </div>
+                  <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword" style="color: #785ce9;">Confirmar Contraseña</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background-color: #785ce9; border-color: #785ce9;"><i class="fa fa-lock"></i></span>
+                  </div>
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme su contraseña" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+            </form>
+            <div class="text-center mt-3">
+              <p>¿Ya tienes una cuenta? <a href="cuenta.html" style="color: #785ce9;">Inicia sesión aquí!!</a></p>
+            </div></div><div class="card-footer" style="text-align: center; margin-top: 20px; color: #888;">
+                <p>©2024 <strong style="color: #785ce9;">ComicSharingan</strong></p>
+                <p><a href="index.html" style="color: #785ce9;"><i class="fa fa-arrow-left"></i> Volver</a></p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        alert('Las contraseñas no coinciden. Por favor, inténtelo de nuevo.');
+        return;
+      }
+      
+      alert('¡Registro exitoso!');
+      <p>Registro Exitoso!!<a href="./cuenta" style="color: #785ce9;">Inicia sesión aquí!!</a></p>
+      window.location.href = './cuenta.html';
+      
+    });
+  </script>
+</body>
+</html>
